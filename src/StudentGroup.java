@@ -51,11 +51,16 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void addFirst(Student student) {
 		// Add your implementation here
+		for(int i = students.length;i >= 1;i--)
+			students[i] = students[i - 1];
+		students[0] = student;
+			
 	}
 
 	@Override
 	public void addLast(Student student) {
 		// Add your implementation here
+		students[students.length] = student;
 	}
 
 	@Override
