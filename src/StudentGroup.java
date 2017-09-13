@@ -19,37 +19,37 @@ public class StudentGroup implements StudentArrayOperation {
 	 * DO NOT remove or change this constructor, it will be used during task check
 	 * @param length
 	 */
-	public StudentGroup(int length) {
+	public StudentGroup(int length) throws IllegalArgumentException{
 		this.students = new Student[length];
 	}
 
 	@Override
-	public Student[] getStudents() {
+	public Student[] getStudents() throws IllegalArgumentException{
 		// Add your implementation here
 		return students;
 	}
 
 	@Override
-	public void setStudents(Student[] students) {
+	public void setStudents(Student[] students) throws IllegalArgumentException{
 		// Add your implementation here
 		this.students = students;
 	}
 
 	@Override
-	public Student getStudent(int index) {
+	public Student getStudent(int index) throws IllegalArgumentException{
 		// Add your implementation here
 		return students[index];
 		
 	}
 
 	@Override
-	public void setStudent(Student student, int index) {
+	public void setStudent(Student student, int index) throws IllegalArgumentException{
 		// Add your implementation here
 		students[index] = student;
 	}
 
 	@Override
-	public void addFirst(Student student) {
+	public void addFirst(Student student) throws IllegalArgumentException{
 		// Add your implementation here
 		for(int i = students.length;i >= 1;i--)
 			students[i] = students[i - 1];
@@ -58,19 +58,19 @@ public class StudentGroup implements StudentArrayOperation {
 	}
 
 	@Override
-	public void addLast(Student student) {
+	public void addLast(Student student) throws IllegalArgumentException{
 		// Add your implementation here
 		students[students.length] = student;
 	}
 
 	@Override
-	public void add(Student student, int index) {
+	public void add(Student student, int index) throws IllegalArgumentException{
 		// Add your implementation here
 		students[index] = student;
 	}
 
 	@Override
-	public void remove(int index) {
+	public void remove(int index) throws IllegalArgumentException{
 		// Add your implementation here
 		if(index <= students.length)
 		{
@@ -80,7 +80,7 @@ public class StudentGroup implements StudentArrayOperation {
 	}
 
 	@Override
-	public void remove(Student student) {
+	public void remove(Student student) throws IllegalArgumentException{
 		// Add your implementation here
 		for(int i = 0; i <= students.length;i++)
 		{
@@ -94,75 +94,76 @@ public class StudentGroup implements StudentArrayOperation {
 	}
 
 	@Override
-	public void removeFromIndex(int index) {
+	public void removeFromIndex(int index) throws IllegalArgumentException{
 		// Add your implementation here
 		
 	}
 
 	@Override
-	public void removeFromElement(Student student) {
+	public void removeFromElement(Student student) throws IllegalArgumentException{
 		// Add your implementation here
 		
 	}
 
 	@Override
-	public void removeToIndex(int index) {
+	public void removeToIndex(int index) throws IllegalArgumentException{
 		// Add your implementation here
 	}
 
 	@Override
-	public void removeToElement(Student student) {
+	public void removeToElement(Student student) throws IllegalArgumentException{
 		// Add your implementation here
 	}
 
 	@Override
 	public void bubbleSort() {
 		// Add your implementation here
-		/*for(int i=0;i<students.length - 1;i++)
+		for(int i=0;i<students.length - 1;i++)
 		{
 			int j = i + 1;
-			System.out.println(students[i]);
-		}*/
+			if(students[i].compareTo(students[j]) > 0)
+				students[i] = students[j];
+		}
 	}
 
 	@Override
-	public Student[] getByBirthDate(Date date) {
+	public Student[] getByBirthDate(Date date) throws IllegalArgumentException{
 		// Add your implementation here
 		return null;
 	}
 
 	@Override
-	public Student[] getBetweenBirthDates(Date firstDate, Date lastDate) {
+	public Student[] getBetweenBirthDates(Date firstDate, Date lastDate) throws IllegalArgumentException{
 		// Add your implementation here
 		return null;
 	}
 
 	@Override
-	public Student[] getNearBirthDate(Date date, int days) {
+	public Student[] getNearBirthDate(Date date, int days) throws IllegalArgumentException{
 		// Add your implementation here
 		return null;
 	}
 
 	@Override
-	public int getCurrentAgeByDate(int indexOfStudent) {
+	public int getCurrentAgeByDate(int indexOfStudent) throws IllegalArgumentException{
 		// Add your implementation here
 		return 0;
 	}
 
 	@Override
-	public Student[] getStudentsByAge(int age) {
+	public Student[] getStudentsByAge(int age) throws IllegalArgumentException{
 		// Add your implementation here
 		return null;
 	}
 
 	@Override
-	public Student[] getStudentsWithMaxAvgMark() {
+	public Student[] getStudentsWithMaxAvgMark() throws IllegalArgumentException{
 		// Add your implementation here
 		return null;
 	}
 
 	@Override
-	public Student getNextStudent(Student student) {
+	public Student getNextStudent(Student student) throws IllegalArgumentException{
 		// Add your implementation here
 		return null;
 	}
